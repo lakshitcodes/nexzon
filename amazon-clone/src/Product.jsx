@@ -1,14 +1,28 @@
 import React from "react";
 import "./Product.css";
+import { useStateValue } from "./StateProvider";
 
 function Product({ id, title, image, price, rating }) {
+  const [{ basket }, dispatch] = useStateValue();
+  const addToBasket = (e) => {
+    dispatch({
+      type: "ADD_TO_BASKET",
+      item: {
+        id: id,
+        title: title,
+        image: image,
+        price: price,
+        rating: rating,
+      },
+    });
+  };
   return (
     <div className="product">
       <div className="product__info">
         <p>{title}</p>
         <p className="product__price">
           <small>₹</small>
-          <strong>{price}</strong>
+          <strong>{price.toLocaleString("EN-IN")}</strong>
         </p>
         <div className="product__rating">
           {Array(rating)
@@ -19,7 +33,7 @@ function Product({ id, title, image, price, rating }) {
         </div>
       </div>
       <img src={image} alt="Product" />
-      <button>Add to Cart</button>
+      <button onClick={addToBasket}>Add to Cart</button>
     </div>
   );
 }

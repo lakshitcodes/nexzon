@@ -1,0 +1,78 @@
+.checkoutProductContainer {
+  margin-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.checkoutProduct {
+  display: flex;
+}
+.checkoutProduct__info {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+}
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+.checkoutProduct__image {
+  object-fit: contain;
+  width: 220px;
+  height: 220px;
+}
+.checkoutProduct__rating {
+  display: flex;
+}
+.productInfo {
+  display: flex;
+  justify-content: space-between;
+}
+.checkoutProduct__title {
+  width: 80%;
+}
+.checkoutProduct__price {
+  font-size: 22px;
+  font-weight: 800;
+}
+.checkoutButton {
+  display: flex;
+  justify-content: end;
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+.inStock {
+  color: #007600; /* Green color for "In Stock" text */
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  margin-top: 7px;
+}
+.prime {
+  display: inline-flex;
+  align-items: center;
+  color: #00a8e1; /* Blue color for "prime" text */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+.prime::before {
+  content: "✔";
+  font-size: 15px;
+  color: #ff9900; /* Orange color for the tick */
+  margin-right: 4px;
+}
+.checkoutProduct__button {
+  background-color: #ffd814;
+  border-radius: 12px;
+  width: 30%;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  color: #111;
+}
+.checkoutProduct__button:hover {
+  background-color: #f7ca00;
+}
