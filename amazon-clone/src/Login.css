@@ -1,0 +1,103 @@
+.logoContainer {
+  display: flex;
+}
+.login {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+.login__container {
+  color: black;
+  width: 300px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid lightgray;
+  padding: 20px;
+  border-radius: 12px;
+}
+.login__logo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  object-fit: contain;
+  width: 100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.login__button {
+  background-color: #ffd814;
+  border-radius: 12px;
+  width: 100%;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease-in-out;
+  color: #111;
+}
+.login__button:hover {
+  background-color: #f7ca00;
+}
+.signup__button {
+  background-color: white;
+  border-radius: 12px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid #d5d9d9;
+  cursor: pointer;
+  margin-top: 10px;
+  color: #111;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease-in-out;
+}
+.signup__button:hover {
+  background-color: #f7fafa;
+}
+.hoverLink {
+  cursor: pointer;
+  color: #1196ab;
+}
+.hoverLink:hover {
+  text-decoration: underline;
+  color: #d1611f;
+}
+.login__container > h1 {
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.login__container > form > h5 {
+  margin-bottom: 5px;
+}
+.login__container > form > input {
+  height: 30px;
+  margin-bottom: 10px;
+  background-color: white;
+  width: 98%;
+  border: 1px solid #a6a6a6;
+  border-radius: 5px;
+}
+.login__container > p {
+  margin-top: 15px;
+  font-size: 12px;
+}
+.text-with-lines {
+  display: flex;
+  align-items: center;
+  color: #767676;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #e7e7e7; /* or any other color you prefer */
+  margin: 0 5px; /* space around the text */
+}
+
+.text {
+  white-space: nowrap;
+}

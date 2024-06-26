@@ -3,17 +3,19 @@ import Header from "./Header.jsx";
 import Home from "./Home.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Checkout from "./Checkout.jsx";
+import Login from "./Login.jsx";
 
 function App() {
   return (
     <Router>
       <div className="app">
-        <Header />
         <Routes>
+          <Route path="/login" element={<Login />}></Route>
           <Route
             path="/checkout"
             element={
               <>
+                <Header />
                 <Checkout />
               </>
             }
@@ -22,6 +24,7 @@ function App() {
             path="/"
             element={
               <>
+                <Header />
                 <Home />
               </>
             }
