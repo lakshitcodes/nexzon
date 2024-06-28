@@ -4,9 +4,16 @@ import Home from "./Home.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Checkout from "./Checkout.jsx";
 import Login from "./Login.jsx";
+import Payment from "./Payment.jsx";
 import { useEffect } from "react";
 import { auth } from "./firebase.js";
 import { useStateValue } from "./StateProvider.jsx";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
+const promise = loadStripe(
+  "pk_test_51PWcYDCUHs9kPndgSF9kbLeCLRSziMH0JoX37n3j46zLb6RKS45QW6iGlEDAzmk1q7BiTp4Ns1P26ppQVLSveFUi00XPhPg4sX"
+);
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -47,6 +54,25 @@ function App() {
               <>
                 <Header />
                 <Home />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/payment"
+            element={
+              <>
+                <Header />
+                <Elements stripe={promise}>
+                  <Payment />
+                </Elements>
+              </>
+            }
+          ></Route>
+          <Route
+            path="*"
+            element={
+              <>
+                <h1>Not Found</h1>
               </>
             }
           ></Route>

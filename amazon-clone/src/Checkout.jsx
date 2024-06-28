@@ -23,7 +23,7 @@ function Checkout() {
             <div className="checkout__title">
               {user ? (
                 <>
-                  <h3>Hello, {user?.email}</h3> <br />
+                  <h3>Hello, {user?.email.split("@")[0]}</h3> <br />
                 </>
               ) : (
                 ""
