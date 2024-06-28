@@ -6,7 +6,7 @@ import { useStateValue } from "./StateProvider.jsx";
 import CurrencyFormat from "react-currency-format";
 
 function Checkout() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
   const sumPrice = (basket) => {
     return basket.reduce((a, b) => a + b.price, 0);
   };
@@ -21,6 +21,13 @@ function Checkout() {
         <div>
           <div className="checkoutTitle">
             <div className="checkout__title">
+              {user ? (
+                <>
+                  <h3>Hello, {user?.email}</h3> <br />
+                </>
+              ) : (
+                ""
+              )}
               {basket?.length > 0 ? (
                 <>
                   <h1>Shopping Cart</h1>
