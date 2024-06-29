@@ -19,9 +19,9 @@ function CheckoutProduct({ id, image, title, price, rating }) {
         <div className="checkoutProduct__info">
           <div className="productInfo">
             <div>
-              <p className="checkoutProduct__title">
+              <div className="checkoutProduct__title">
                 <h3>{title}</h3>
-              </p>
+              </div>
               <div className="checkoutProduct__rating">
                 {Array(rating)
                   .fill()

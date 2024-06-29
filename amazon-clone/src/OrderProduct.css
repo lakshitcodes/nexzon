@@ -1,0 +1,71 @@
+.shoppingIcon {
+  height: 12px;
+}
+.buttons {
+  display: flex;
+  width: 70%;
+}
+
+.product__info {
+  flex: 0.55;
+  align-content: center;
+  padding-left: 20px;
+}
+.hoverLink {
+  cursor: pointer;
+  color: #1196ab;
+}
+.hoverLink:hover {
+  text-decoration: underline;
+  color: #d1611f;
+}
+.white__button {
+  background-color: white;
+  border-radius: 12px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid #d5d9d9;
+  cursor: pointer;
+  margin-top: 10px;
+  color: #111;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.white__button:hover {
+  background-color: #f7fafa;
+}
+.small__button {
+  width: 40%;
+  margin: 5px;
+}
+.orderproduct {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  background-color: white;
+  width: 40vw;
+}
+
+.product__image {
+  flex: 0.2;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Vertically center align the image */
+}
+
+.image {
+  width: 100px;
+  height: auto; /* Ensured aspect ratio remains intact */
+  margin-left: 20px;
+}
+
+.product__review {
+  margin-top: 5px;
+  flex: 0.25;
+  text-align: right; /* Aligned text to the right */
+  padding-right: 20px; /* Added padding for spacing */
+}

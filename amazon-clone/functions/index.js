@@ -5,12 +5,10 @@ const stripe = require("stripe")(
   "sk_test_51PWcYDCUHs9kPndg93lojqtc5lQxGNZQ927TBqUxrWhfY8vGvsK5UXaO4nEqlniwfmJqNLNdfgcbpabOOthDtUdu00Tee99JSK"
 );
 
-//API
-
-//App Config
+// App Config
 const app = express();
 
-//Middlewares
+// Middlewares
 app.use(cors({ origin: true }));
 app.use(express.json());
 
@@ -20,9 +18,9 @@ app.get("/", (req, res) => {
 });
 
 app.post("/payments/create", async (req, res) => {
-  let total = req.query.total;
+  const total = req.query.total;
 
-  console.log("Payment Request Recieved", total);
+  console.log("Payment Request Received", total);
   const paymentIntent = await stripe.paymentIntents.create({
     amount: total,
     currency: "inr",
@@ -35,6 +33,3 @@ app.post("/payments/create", async (req, res) => {
 
 // Listen Command
 exports.api = functions.https.onRequest(app);
-
-// Example Endpoint
-// http://127.0.0.1:5001/lakshit-nexzon/us-central1/api
