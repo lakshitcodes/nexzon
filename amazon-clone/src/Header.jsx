@@ -24,7 +24,6 @@ function Header() {
       </Link>
       <div className="header__search">
         <input type="text" className="header__searchInput" />
-        {/* Logo */}
         <SearchIcon className="header__searchIcon" />
       </div>
       <div className="header__nav">
@@ -44,10 +43,12 @@ function Header() {
             <span className="header__optionLineTwo">& Orders</span>
           </div>
         </Link>
-        <div className="header__option">
-          <span className="header__optionLineOne">Your</span>
-          <span className="header__optionLineTwo">Prime</span>
-        </div>
+        <Link to="https://www.primevideo.com/">
+          <div className="header__option">
+            <span className="header__optionLineOne">Your</span>
+            <span className="header__optionLineTwo">Prime</span>
+          </div>
+        </Link>
         <Link to="/checkout">
           <div className="header__optionBasket">
             <ShoppingCartIcon />

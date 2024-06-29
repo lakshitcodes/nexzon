@@ -2,77 +2,99 @@
   margin-bottom: 10px;
   padding-left: 5px;
   padding-right: 5px;
+  width: 60vw;
 }
+
 .checkoutProduct {
   display: flex;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
 }
+
 .checkoutProduct__info {
   display: flex;
   flex-direction: column;
   padding: 20px;
   width: 100%;
 }
+
 .image {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 5px;
+  height: 250px; /* Increased height */
+  width: 250px; /* Increased width */
+  overflow: hidden;
 }
+
 .checkoutProduct__image {
+  width: 100%;
   object-fit: contain;
-  width: 220px;
-  height: 220px;
+  height: 100%;
 }
+
 .checkoutProduct__rating {
   display: flex;
 }
+
 .productInfo {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
+
 .checkoutProduct__title {
   width: 80%;
 }
+
 .checkoutProduct__price {
   font-size: 22px;
   font-weight: 800;
+  margin-top: 10px;
 }
+
 .checkoutButton {
   display: flex;
-  justify-content: end;
-  margin-top: 100px;
-  margin-bottom: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
 }
+
 .inStock {
-  color: #007600; /* Green color for "In Stock" text */
+  color: #007600;
   font-family: Arial, sans-serif;
   font-size: 12px;
   margin-top: 7px;
 }
+
 .prime {
   display: inline-flex;
   align-items: center;
-  color: #00a8e1; /* Blue color for "prime" text */
+  color: #00a8e1;
   font-family: Arial, sans-serif;
   font-size: 16px;
   font-weight: bold;
 }
+
 .prime::before {
   content: "✔";
   font-size: 15px;
-  color: #ff9900; /* Orange color for the tick */
+  color: #ff9900;
   margin-right: 4px;
 }
+
 .checkoutProduct__button {
   background-color: #ffd814;
   border-radius: 12px;
-  width: 30%;
+  width: 150px;
   height: 30px;
   border: none;
   cursor: pointer;
   margin-top: 10px;
   color: #111;
 }
+
 .checkoutProduct__button:hover {
   background-color: #f7ca00;
 }

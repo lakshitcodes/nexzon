@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Product.css";
 import { useStateValue } from "./StateProvider";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { useNavigate } from "react-router-dom";
 
 function Product({ id, title, image, price, rating }) {
+  const navigate = useNavigate();
   const [{ basket }, dispatch] = useStateValue();
+  const [cart, setCart] = useState(false);
   const addToBasket = (e) => {
     dispatch({
       type: "ADD_TO_BASKET",
@@ -15,6 +19,23 @@ function Product({ id, title, image, price, rating }) {
         rating: rating,
       },
     });
+    setCart(true);
+    setTimeout(() => {
+      setCart(false);
+    }, 1500);
+  };
+  const directBuy = (e) => {
+    dispatch({
+      type: "ADD_TO_BASKET",
+      item: {
+        id: id,
+        title: title,
+        image: image,
+        price: price,
+        rating: rating,
+      },
+    });
+    navigate("/payment");
   };
   return (
     <div className="product">
@@ -33,7 +54,17 @@ function Product({ id, title, image, price, rating }) {
         </div>
       </div>
       <img src={image} alt="Product" />
-      <button onClick={addToBasket}>Add to Cart</button>
+      {cart && (
+        <div className="cart__signal">
+          <p>
+            <CheckCircleIcon /> Added to Cart
+          </p>
+        </div>
+      )}
+      <div className="buyButtons">
+        <button onClick={addToBasket}>Add to Cart</button>
+        <button onClick={directBuy}>Buy Now</button>
+      </div>
     </div>
   );
 }

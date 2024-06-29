@@ -1,1 +1,29 @@
+/* global-scrollbar.css */
 
+/* Width and height of scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Thumb (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 6px;
+  border: 2px solid #f1f1f1; /* Border around the thumb */
+}
+
+/* Handle (the part you click on to scroll) */
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+/* Corner (between vertical and horizontal scrollbars) */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
