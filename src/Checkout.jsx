@@ -41,16 +41,18 @@ function Checkout() {
             </div>
             <p>Price</p>
           </div>
-          {basket.map((item) => (
-            <CheckoutProduct
-              key={item.id}
-              id={item.id}
-              image={item.image}
-              title={item.title}
-              price={item.price}
-              rating={item.rating}
-            />
-          ))}
+          <div className="checkoutProductComponents">
+            {basket.map((item) => (
+              <CheckoutProduct
+                key={item.id}
+                id={item.id}
+                image={item.image}
+                title={item.title}
+                price={item.price}
+                rating={item.rating}
+              />
+            ))}
+          </div>
           <div className="endTotal">
             <CurrencyFormat
               renderText={(value) => (

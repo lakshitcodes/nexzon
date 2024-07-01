@@ -3,7 +3,7 @@
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  width: 100vw;
+  max-width: 80vw;
 }
 .home__row {
   display: flex;

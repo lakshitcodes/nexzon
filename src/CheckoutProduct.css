@@ -2,7 +2,7 @@
   margin-bottom: 10px;
   padding-left: 5px;
   padding-right: 5px;
-  width: 60vw;
+  width: 60vw; /* Default width for larger screens */
 }
 
 .checkoutProduct {
@@ -97,4 +97,63 @@
 
 .checkoutProduct__button:hover {
   background-color: #f7ca00;
+}
+
+@media (max-width: 768px) {
+  .checkoutProductContainer {
+    width: 100%; /* Full width for smaller screens */
+  }
+
+  .checkoutProduct {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center items vertically */
+    /* text-align: center; Center text */
+  }
+
+  .image {
+    height: 200px; /* Reduced height on smaller screens */
+    width: 80%; /* Reduced width to make it smaller */
+    /* margin: 0 auto; Center image horizontally */
+  }
+
+  .checkoutProduct__title {
+    width: 100%; /* Full width for title on smaller screens */
+    font-size: 12px; /* Smaller font size for title */
+    margin-top: 10px; /* Increased margin top for spacing */
+  }
+
+  .checkoutProduct__price {
+    font-size: 13px; /* Smaller font size on smaller screens */
+    font-weight: 600; /* Reduced font weight */
+    margin-top: 10px; /* Adjusted margin top */
+  }
+
+  .checkoutButton {
+    justify-content: center; /* Center align button on smaller screens */
+    margin-top: 15px; /* Increased top margin for spacing */
+    height: 0;
+  }
+
+  .checkoutProduct__button {
+    width: auto; /* Allow button width to adjust based on text */
+  }
+  .prime {
+    font-size: 10px;
+  }
+  .prime::before {
+    font: 8px;
+  }
+  .inStock {
+    font-size: 9px;
+  }
+  .checkoutProduct__button {
+    font-size: 12px;
+    padding: 5px 10px;
+    position: relative;
+    top: -60px;
+    right: -80px;
+  }
+  .checkoutProduct__info {
+    margin-bottom: -25px;
+  }
 }
