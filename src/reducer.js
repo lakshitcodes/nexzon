@@ -1,6 +1,9 @@
+import inventory from "./inventory";
+
 export const initialState = {
   basket: [],
   user: null,
+  inventory: inventory,
 };
 const reducer = (state, action) => {
   console.log(action);

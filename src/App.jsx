@@ -11,6 +11,7 @@ import { auth } from "./firebase.js";
 import { useStateValue } from "./StateProvider.jsx";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import inventory from "./inventory.js";
 
 const promise = loadStripe(
   "pk_test_51PWcYDCUHs9kPndgSF9kbLeCLRSziMH0JoX37n3j46zLb6RKS45QW6iGlEDAzmk1q7BiTp4Ns1P26ppQVLSveFUi00XPhPg4sX"
