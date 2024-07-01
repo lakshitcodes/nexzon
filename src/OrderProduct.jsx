@@ -6,7 +6,7 @@ function OrderProduct({ image, description }) {
   return (
     <div className="orderproduct">
       <div className="product__image">
-        <img src={`dist${image}`} alt="" className="image" />
+        <img src={image} alt="" className="image" />
       </div>
       <div className="orderProduct__info">
         <p className="hoverLink">{description}</p>
