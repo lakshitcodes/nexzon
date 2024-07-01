@@ -12,6 +12,7 @@ import { useStateValue } from "./StateProvider.jsx";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import inventory from "./inventory.js";
+import SearchResults from "./SearchResults.jsx";
 
 const promise = loadStripe(
   "pk_test_51PWcYDCUHs9kPndgSF9kbLeCLRSziMH0JoX37n3j46zLb6RKS45QW6iGlEDAzmk1q7BiTp4Ns1P26ppQVLSveFUi00XPhPg4sX"
@@ -65,6 +66,15 @@ function App() {
               <>
                 <Header />
                 <Home />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/search-results"
+            element={
+              <>
+                <Header />
+                <SearchResults />
               </>
             }
           ></Route>

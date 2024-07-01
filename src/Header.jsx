@@ -16,8 +16,32 @@ function Header() {
   };
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
+
+  function getIndexesByKeyword(searchValue) {
+    const indexes = [];
+    const searchWords = searchValue.toLowerCase().split(" ");
+
+    inventory.forEach((item, index) => {
+      const keywords = item.keywords.map((keyword) => keyword.toLowerCase());
+      const matches = searchWords.some((word) =>
+        keywords.some((keyword) => keyword.includes(word))
+      );
+
+      if (matches) {
+        indexes.push(index);
+      }
+    });
+
+    return indexes;
+  }
+
   const handleSearch = (e) => {
     e.preventDefault();
+    const indexes = getIndexesByKeyword(search);
+    indexes.forEach((item) => {
+      console.log(inventory[item].title);
+    });
+    navigate("/search-results", { state: { results: indexes } });
   };
 
   return (
