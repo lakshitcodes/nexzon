@@ -11,6 +11,7 @@ function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [login, setLogIn] = useState(true);
   let signIn = (e) => {
     e.preventDefault();
     console.log("signing In");
@@ -41,6 +42,9 @@ function Login() {
         alert(errorMessage);
       });
   };
+  const handleModeChange = () => {
+    setLogIn(!login);
+  };
   return (
     <div className="login">
       <Link to="/">
@@ -53,7 +57,8 @@ function Login() {
         </div>
       </Link>
       <div className="login__container">
-        <h1>Sign in</h1>
+        <h1>{login ? "Sign In" : "Sign Up"}</h1>
+
         <form>
           <h5>E-mail</h5>
           <input
@@ -71,8 +76,12 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit" className="login__button" onClick={signIn}>
-            Sign in
+          <button
+            type="submit"
+            className="login__button"
+            onClick={login ? signIn : register}
+          >
+            {login ? "Sign In" : "Create your Nexzon Account"}
           </button>
         </form>
         <p>
@@ -83,12 +92,18 @@ function Login() {
       </div>
       <div className="text-with-lines">
         <div className="line"></div>
-        <span className="text">New to Nexzon?</span>
+        <span className="text">
+          {login ? "New to Nexzon?" : "Already Registered?"}
+        </span>
         <div className="line"></div>
       </div>
 
-      <button className="signup__button" type="submit" onClick={register}>
-        Create your Nexzon Account
+      <button
+        className="signup__button"
+        type="submit"
+        onClick={handleModeChange}
+      >
+        {!login ? "Log In Here" : "Create your Nexzon Account"}
       </button>
     </div>
   );
