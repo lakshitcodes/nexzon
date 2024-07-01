@@ -1,35 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useStateValue } from "./StateProvider.jsx";
 import { auth } from "./firebase.js";
+import logoWhite from "./assets/nexzon_home.png";
 
 function Header() {
-  const [{ basket, user }, dispatch] = useStateValue();
+  const [{ basket, user, inventory }, dispatch] = useStateValue();
   const handleAuthentication = () => {
     if (user) {
       auth.signOut();
     }
   };
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+  const handleSearch = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="header">
       <Link to="/">
-        <img
-          className="header__logo"
-          src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
-          alt="nexzon"
-        />
+        <img className="header__logo" src={logoWhite} alt="nexzon" />
       </Link>
-      <div className="header__search">
+      <form onSubmit={handleSearch} className="header__search">
         <input
           type="text"
           className="header__searchInput"
           placeholder="Search Nexzon"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
-        <SearchIcon className="header__searchIcon" />
-      </div>
+        <SearchIcon className="header__searchIcon" onClick={handleSearch} />
+      </form>
       <div className="header__nav">
         <Link to={!user && "/login"}>
           <div
@@ -40,7 +45,7 @@ function Header() {
               Hello {user ? user.email.split("@")[0] : "Guest"}
             </span>
             <span className="header__optionLineTwo">
-              {user ? "Sign Out" : "Sign  In"}
+              {user ? "Sign Out" : "Sign In"}
             </span>
           </div>
         </Link>

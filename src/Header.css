@@ -10,7 +10,8 @@
   width: 100px;
   object-fit: contain;
   margin: 0 20px;
-  margin-top: 18px;
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 .header__search {
   display: flex;

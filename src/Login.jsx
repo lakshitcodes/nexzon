@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { db, auth } from "./firebase.js";
+import logo from "./assets/nexzon.png";
 
 function Login() {
   const navigate = useNavigate();
@@ -49,11 +50,7 @@ function Login() {
     <div className="login">
       <Link to="/">
         <div className="logoContainer">
-          <img
-            className="login__logo"
-            src="https://cdn.pixabay.com/photo/2021/08/10/16/02/amazon-6536326_1280.png"
-            alt="nexzon"
-          />
+          <img className="login__logo" src={logo} alt="nexzon" />
         </div>
       </Link>
       <div className="login__container">
