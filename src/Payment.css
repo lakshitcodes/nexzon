@@ -1,5 +1,6 @@
 .payment {
   background-color: rgb(234, 237, 237);
+  margin-bottom: 40px;
 }
 .payment__container {
   display: flex;
@@ -61,4 +62,36 @@
 .buyNow__button:hover {
   background-color: #f7ca00;
   transition: box-shadow 0.3s ease-in-out;
+}
+@media (max-width: 768px) {
+  .payment {
+    margin-bottom: 25px;
+  }
+  .payment__container > h1 {
+    font-size: 1.5rem;
+  }
+  .payment__section {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .payment__title > h3 {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .payment__items > img {
+    width: 100px;
+    height: 100px;
+  }
+  .payment__items > p {
+    margin-left: 10px;
+  }
+  .payment__details > form {
+    max-width: 300px;
+  }
+  .buyNow__button {
+    height: 40px;
+  }
+  .payment__priceContainer {
+    margin-top: 14px;
+  }
 }

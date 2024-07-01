@@ -86,9 +86,9 @@
   }
   .orderProduct__info {
     flex: unset;
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
+    /* width: 100%; */
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .buttons {
     justify-content: center;
@@ -97,6 +97,7 @@
   .small__button {
     width: 45%;
     margin: 5px;
+    font-size: 11px;
   }
   .product__review {
     flex: unset;
@@ -110,5 +111,10 @@
   .product__review .white__button {
     width: 90%; /* Adjust button width on small screens */
     max-width: 300px; /* Ensure the button doesn't become too wide */
+    font-size: 11px;
+    margin-top: 0;
+  }
+  .orderProduct__info > p {
+    font-size: 14px;
   }
 }

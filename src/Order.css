@@ -56,9 +56,9 @@
   }
   .order__info > p,
   .order__id {
-    font-size: 14px;
+    font-size: 12px;
   }
   .order__smallText {
-    font-size: 12px !important;
+    font-size: 10px !important;
   }
 }
