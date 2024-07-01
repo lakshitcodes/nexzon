@@ -1,0 +1,135 @@
+.searchComponent {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid #ddd;
+  padding: 20px;
+  margin: 10px 0;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.searchComponent:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.searchProduct__image {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchProduct__image img {
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: contain;
+}
+
+.searchProduct__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 180px;
+}
+
+.searchProduct__info h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.searchProduct__rating {
+  display: flex;
+  margin-top: -8px;
+}
+
+.searchProduct__rating p {
+  margin: 0;
+  padding-right: 5px;
+}
+
+.searchProduct__price {
+  display: flex;
+  align-items: center;
+}
+
+.searchProduct__price h2 {
+  margin-top: 5px;
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.search__smalltext {
+  font-size: 12px;
+  color: #555;
+  margin-top: 19px;
+}
+
+.prime {
+  display: inline-flex;
+  align-items: center;
+  color: #00a8e1;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.prime::before {
+  content: "✔";
+  font-size: 14px;
+  color: #ff9900;
+  margin-right: 4px;
+}
+
+.shoppingButton {
+  background-color: #ffd814;
+  border-radius: 12px;
+  width: 150px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  color: #111;
+}
+
+.shoppingButton:hover {
+  background-color: #f7ca00;
+}
+@media (max-width: 768px) {
+  .searchComponent {
+    flex-direction: column;
+    align-items: center;
+    margin: 8px;
+  }
+  .searchProduct__image {
+    margin-right: 0;
+  }
+  .searchProduct__info {
+    height: auto;
+  }
+  .searchProduct__info h3 {
+    margin-top: 10px;
+  }
+  .search__smalltext {
+    margin-top: 10px;
+  }
+  .shoppingButton {
+    margin-top: 10px;
+    width: 100%;
+  }
+  .searchProduct__info > h3 {
+    font-size: 16px;
+  }
+  .searchProduct__price h2 {
+    font-size: 20px;
+  }
+  .searchProduct__rating p {
+    font-size: 14px;
+  }
+}

@@ -24,7 +24,13 @@ function Order({ order }) {
         </div>
       </div>
       {order.data.basket?.map((item) => (
-        <OrderProduct image={item.image} description={item.title} />
+        <OrderProduct
+          image={item.image}
+          description={item.title}
+          price={item.price}
+          id={item.id}
+          rating={item.rating}
+        />
       ))}
       <div className="lowerbox">
         <p className="hoverLink">Archive Order</p>
