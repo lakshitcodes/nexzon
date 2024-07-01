@@ -1,3 +1,6 @@
+/* OrderProduct.css */
+
+/* General Styles */
 .shoppingIcon {
   height: 12px;
 }
@@ -6,7 +9,7 @@
   width: 70%;
 }
 
-.product__info {
+.orderProduct__info {
   flex: 0.55;
   align-content: center;
   padding-left: 20px;
@@ -54,18 +57,58 @@
   flex: 0.2;
   display: flex;
   justify-content: center;
-  align-items: center; /* Vertically center align the image */
+  align-items: center;
 }
 
 .image {
   width: 100px;
-  height: auto; /* Ensured aspect ratio remains intact */
+  height: auto; /* Ensure aspect ratio remains intact */
   margin-left: 20px;
 }
 
 .product__review {
   margin-top: 5px;
   flex: 0.25;
-  text-align: right; /* Aligned text to the right */
+  text-align: right; /* Align text to the right */
   padding-right: 20px; /* Added padding for spacing */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .orderproduct {
+    flex-direction: column;
+    width: 90vw;
+    align-items: center;
+    text-align: center;
+  }
+  .product__image {
+    margin-bottom: 10px;
+  }
+  .orderProduct__info {
+    flex: unset;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .buttons {
+    justify-content: center;
+    width: 100%;
+  }
+  .small__button {
+    width: 45%;
+    margin: 5px;
+  }
+  .product__review {
+    flex: unset;
+    text-align: center;
+    padding-right: 0;
+    margin-bottom: 10px;
+    width: 100%; /* Ensure the button takes full width */
+    display: flex;
+    justify-content: center;
+  }
+  .product__review .white__button {
+    width: 90%; /* Adjust button width on small screens */
+    max-width: 300px; /* Ensure the button doesn't become too wide */
+  }
 }
