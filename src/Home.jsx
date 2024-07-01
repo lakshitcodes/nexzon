@@ -21,9 +21,9 @@ function Home() {
       return indexes;
     }
 
-    const indexes = getRandomIndexes(6);
+    const indexes = getRandomIndexes(12);
     setRandomIndexes(indexes);
-  }, []);
+  }, [inventory]);
 
   if (inventory.length === 0 || randomIndexes.length === 0) {
     return <div>Loading...</div>;
@@ -34,52 +34,42 @@ function Home() {
       <div className="home__container">
         <img src={alexaImage} alt="Alexa" className="home__image" />
         <div className="home__row">
-          <Product
-            id={inventory[randomIndexes[0]].id}
-            title={inventory[randomIndexes[0]].title}
-            image={inventory[randomIndexes[0]].image}
-            price={inventory[randomIndexes[0]].price}
-            rating={inventory[randomIndexes[0]].rating}
-          />
-          <Product
-            id={inventory[randomIndexes[1]].id}
-            title={inventory[randomIndexes[1]].title}
-            image={inventory[randomIndexes[1]].image}
-            price={inventory[randomIndexes[1]].price}
-            rating={inventory[randomIndexes[1]].rating}
-          />
+          {randomIndexes.slice(0, 4).map((index) => (
+            <Product
+              key={inventory[index].id}
+              id={inventory[index].id}
+              title={inventory[index].title}
+              image={inventory[index].image}
+              price={inventory[index].price}
+              rating={inventory[index].rating}
+            />
+          ))}
         </div>
         <div className="home__row">
-          <Product
-            id={inventory[randomIndexes[2]].id}
-            title={inventory[randomIndexes[2]].title}
-            image={inventory[randomIndexes[2]].image}
-            price={inventory[randomIndexes[2]].price}
-            rating={inventory[randomIndexes[2]].rating}
-          />
-          <Product
-            id={inventory[randomIndexes[3]].id}
-            title={inventory[randomIndexes[3]].title}
-            image={inventory[randomIndexes[3]].image}
-            price={inventory[randomIndexes[3]].price}
-            rating={inventory[randomIndexes[3]].rating}
-          />
-          <Product
-            id={inventory[randomIndexes[4]].id}
-            title={inventory[randomIndexes[4]].title}
-            image={inventory[randomIndexes[4]].image}
-            price={inventory[randomIndexes[4]].price}
-            rating={inventory[randomIndexes[4]].rating}
-          />
+          {randomIndexes.slice(4, 8).map((index) => (
+            <Product
+              key={inventory[index].id}
+              id={inventory[index].id}
+              title={inventory[index].title}
+              image={inventory[index].image}
+              price={inventory[index].price}
+              rating={inventory[index].rating}
+            />
+          ))}
         </div>
         <div className="home__row">
-          <Product
-            id={inventory[randomIndexes[5]].id}
-            title={inventory[randomIndexes[5]].title}
-            image={inventory[randomIndexes[5]].image}
-            price={inventory[randomIndexes[5]].price}
-            rating={inventory[randomIndexes[5]].rating}
-          />
+          {randomIndexes.slice(8, 11).map((index) => {
+            return (
+              <Product
+                key={inventory[index].id}
+                id={inventory[index].id}
+                title={inventory[index].title}
+                image={inventory[index].image}
+                price={inventory[index].price}
+                rating={inventory[index].rating}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

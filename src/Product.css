@@ -2,17 +2,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin: 10px;
   padding: 20px;
-  width: 100%;
-  height: auto; /* Adjust to auto for flexibility */
-  min-width: 100px;
+  min-width: 300px; /* Adjust the max width for a better look */
   background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Add a shadow for a card effect */
   z-index: 1;
   box-sizing: border-box;
-  padding-bottom: 40px;
   position: relative; /* Ensure position is relative to contain absolute children */
+  border-radius: 10px; /* Rounded corners for a nicer look */
+  overflow: hidden; /* Ensure content stays within the card */
+  height: 100%; /* Ensure all cards have the same height */
 }
 
 .product > img {
@@ -22,52 +23,66 @@
   margin-bottom: 15px;
 }
 
-.product__price {
-  margin-top: 5px;
+.product__info {
+  text-align: center;
+  width: 100%; /* Ensure info takes full width */
+  flex-grow: 1; /* Make info section flexible */
 }
 
-.product__info {
-  height: auto; /* Adjust to auto for flexibility */
-  margin-bottom: 15px;
-  text-align: center;
+.product__title {
+  font-size: 16px; /* Adjust font size */
+  margin: 10px 0; /* Add margin */
+  padding: 0 10px; /* Add padding for better readability */
+}
+
+.product__price {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.product__rating {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Center align for better presentation */
+  margin-bottom: 15px; /* Add margin at the bottom */
+}
+
+.buyButtons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 15px; /* Add margin at the top */
 }
 
 .buyButtons > button {
   background-color: #ffd814;
   border-radius: 12px;
-  margin-top: 10px;
   padding: 5px 10px;
   height: 30px;
   border: none;
   cursor: pointer;
   color: #111;
-  width: 200px;
+  width: 45%; /* Adjust width for better button alignment */
 }
 
 .buyButtons > button:hover {
   background-color: #f7ca00;
 }
 
-.product__rating {
-  display: flex;
-  flex-direction: row;
-  justify-content: center; /* Center align for better presentation on small screens */
-}
-
 .cart__signal {
   display: flex;
   align-items: center; /* Align items vertically centered */
   justify-content: center; /* Center the content horizontally */
-  color: green;
-  background-color: #e8f5e9; /* Light green background to make it visually appealing */
-  border: 1px solid #4caf50; /* Border to highlight the signal */
+  color: white;
+  background-color: #4caf50; /* Darker green background */
   padding: 5px 10px; /* Padding to give some space inside the box */
   border-radius: 5px; /* Rounded corners for a nicer look */
   position: absolute; /* Position absolute to place it over the product */
-  bottom: 40px; /* Adjust the bottom position as needed */
+  top: 10px; /* Adjust the top position as needed */
   left: 50%; /* Center the signal horizontally */
   transform: translateX(-50%); /* Center the signal horizontally */
   z-index: 10; /* Ensure it's on top of other elements */
+  animation: fadeInOut 2.2s ease-in-out; /* Animation for the added to cart signal */
 }
 
 .cart__signal p {
@@ -75,6 +90,18 @@
   display: flex;
   align-items: center; /* Align items vertically centered */
   gap: 5px; /* Add space between the icon and the text */
+  font-weight: bold;
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50%,
+  70% {
+    opacity: 1;
+  }
 }
 
 /* Media query for small screens */
@@ -95,18 +122,14 @@
     justify-content: center; /* Center align for better presentation on small screens */
   }
 
-  .product > button {
+  .buyButtons > button {
     padding: 5px; /* Reduce padding for smaller screens */
     font-size: 14px; /* Adjust font size for smaller screens */
+    width: 45%; /* Ensure buttons remain aligned */
   }
 
   .cart__signal {
-    bottom: 30px; /* Adjust bottom position for smaller screens */
+    top: 20px; /* Adjust top position for smaller screens */
     padding: 3px 8px; /* Adjust padding for smaller screens */
   }
-}
-.buyButtons {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
 }

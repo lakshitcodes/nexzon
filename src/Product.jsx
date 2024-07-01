@@ -8,6 +8,7 @@ function Product({ id, title, image, price, rating }) {
   const navigate = useNavigate();
   const [{ basket }, dispatch] = useStateValue();
   const [cart, setCart] = useState(false);
+
   const addToBasket = (e) => {
     dispatch({
       type: "ADD_TO_BASKET",
@@ -24,6 +25,7 @@ function Product({ id, title, image, price, rating }) {
       setCart(false);
     }, 1500);
   };
+
   const directBuy = (e) => {
     dispatch({
       type: "ADD_TO_BASKET",
@@ -37,10 +39,12 @@ function Product({ id, title, image, price, rating }) {
     });
     navigate("/payment");
   };
+
   return (
     <div className="product">
+      <img src={image} alt="Product" />
       <div className="product__info">
-        <p>{title}</p>
+        <p className="product__title">{title}</p>
         <p className="product__price">
           <small>₹</small>
           <strong>{price.toLocaleString("EN-IN")}</strong>
@@ -48,23 +52,25 @@ function Product({ id, title, image, price, rating }) {
         <div className="product__rating">
           {Array(rating)
             .fill()
-            .map((_, i) => {
-              return <p key={i}>⭐️</p>;
-            })}
+            .map((_, i) => (
+              <p key={i}>⭐️</p>
+            ))}
         </div>
       </div>
-      <img src={image} alt="Product" />
+      <div className="buyButtons">
+        <button className="addButton" onClick={addToBasket}>
+          Add to Cart
+        </button>
+        <button className="buyButton" onClick={directBuy}>
+          Buy Now
+        </button>
+      </div>
       {cart && (
         <div className="cart__signal">
-          <p>
-            <CheckCircleIcon /> Added to Cart
-          </p>
+          <CheckCircleIcon />
+          <p>Added to Cart</p>
         </div>
       )}
-      <div className="buyButtons">
-        <button onClick={addToBasket}>Add to Cart</button>
-        <button onClick={directBuy}>Buy Now</button>
-      </div>
     </div>
   );
 }

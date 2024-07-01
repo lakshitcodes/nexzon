@@ -7,6 +7,8 @@
 }
 .home__row {
   display: flex;
+  overflow: auto;
+  width: 80vw;
   flex: 1;
   margin-right: 5px;
   margin-left: 5px;
@@ -16,4 +18,26 @@
   z-index: -1;
   margin-bottom: -285px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+@media (max-width: 1500px) {
+  .home__image {
+    margin-bottom: -200px;
+  }
+}
+@media (max-width: 1050px) {
+  .home__image {
+    margin-bottom: -150px;
+  }
+}
+@media (max-width: 768px) {
+  .home {
+    max-width: 100vw;
+  }
+  .home__row {
+    width: 100vw;
+  }
+  .home__image {
+    margin-bottom: -100px;
+  }
 }
