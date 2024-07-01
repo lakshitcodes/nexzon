@@ -23,12 +23,19 @@ function Header() {
         />
       </Link>
       <div className="header__search">
-        <input type="text" className="header__searchInput" />
+        <input
+          type="text"
+          className="header__searchInput"
+          placeholder="Search Nexzon"
+        />
         <SearchIcon className="header__searchIcon" />
       </div>
       <div className="header__nav">
         <Link to={!user && "/login"}>
-          <div className="header__option" onClick={handleAuthentication}>
+          <div
+            className="header__option header__signInOption"
+            onClick={handleAuthentication}
+          >
             <span className="header__optionLineOne">
               Hello {user ? user.email.split("@")[0] : "Guest"}
             </span>
@@ -44,7 +51,7 @@ function Header() {
           </div>
         </Link>
         <Link to="https://www.primevideo.com/">
-          <div className="header__option">
+          <div className="header__option yourPrime">
             <span className="header__optionLineOne">Your</span>
             <span className="header__optionLineTwo">Prime</span>
           </div>
