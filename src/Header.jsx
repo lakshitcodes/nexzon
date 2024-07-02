@@ -46,7 +46,7 @@ function Header() {
 
   return (
     <div className="header">
-      <Link to="/">
+      <Link to="/home">
         <img className="header__logo" src={logoWhite} alt="nexzon" />
       </Link>
       <form onSubmit={handleSearch} className="header__search">
