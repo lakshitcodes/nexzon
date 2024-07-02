@@ -68,6 +68,12 @@
 .buyButtons > button:hover {
   background-color: #f7ca00;
 }
+.buyButton {
+  background-color: #ffa41c !important;
+}
+.buyButton:hover {
+  background-color: #fa8900 !important;
+}
 
 .cart__signal {
   display: flex;

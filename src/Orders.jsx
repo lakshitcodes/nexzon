@@ -34,7 +34,15 @@ function Orders() {
       setOrders([]);
     }
   }, [user]);
-
+  if (!user) {
+    return (
+      <div className="orders">
+        <div className="orders__container">
+          <h1>Please sign in to see your orders</h1>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="orders">
       <div className="orders__container">

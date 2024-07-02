@@ -11,8 +11,8 @@ import { auth } from "./firebase.js";
 import { useStateValue } from "./StateProvider.jsx";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-import inventory from "./inventory.js";
 import SearchResults from "./SearchResults.jsx";
+import Footer from "./Footer.jsx";
 
 const promise = loadStripe(
   "pk_test_51PWcYDCUHs9kPndgSF9kbLeCLRSziMH0JoX37n3j46zLb6RKS45QW6iGlEDAzmk1q7BiTp4Ns1P26ppQVLSveFUi00XPhPg4sX"
@@ -48,6 +48,7 @@ function App() {
               <>
                 <Header />
                 <Checkout />
+                <Footer />
               </>
             }
           ></Route>
@@ -57,6 +58,7 @@ function App() {
               <>
                 <Header />
                 <Orders />
+                <Footer />
               </>
             }
           ></Route>
@@ -66,6 +68,7 @@ function App() {
               <>
                 <Header />
                 <Home />
+                <Footer />
               </>
             }
           ></Route>
@@ -75,6 +78,7 @@ function App() {
               <>
                 <Header />
                 <SearchResults />
+                <Footer />
               </>
             }
           ></Route>
@@ -86,6 +90,7 @@ function App() {
                 <Elements stripe={promise}>
                   <Payment />
                 </Elements>
+                <Footer />
               </>
             }
           ></Route>

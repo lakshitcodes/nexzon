@@ -86,7 +86,9 @@
   color: #ff9900;
   margin-right: 4px;
 }
-
+.search__buttons {
+  display: flex;
+}
 .shoppingButton {
   background-color: #ffd814;
   border-radius: 12px;
@@ -96,10 +98,17 @@
   cursor: pointer;
   margin-top: 10px;
   color: #111;
+  margin-right: 10px;
 }
 
 .shoppingButton:hover {
   background-color: #f7ca00;
+}
+.shoppingButton__buyNow {
+  background-color: #ffa41c !important;
+}
+.shoppingButton__buyNow:hover {
+  background-color: #fa8900 !important;
 }
 @media (max-width: 768px) {
   .searchComponent {
@@ -131,5 +140,8 @@
   }
   .searchProduct__rating p {
     font-size: 14px;
+  }
+  .search__buttons {
+    flex-direction: column;
   }
 }

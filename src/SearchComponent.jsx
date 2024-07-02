@@ -1,23 +1,44 @@
 import React from "react";
 import "./SearchComponent.css";
 import { useStateValue } from "./StateProvider";
+import { useNavigate } from "react-router";
+import useAuth from "./isSignedIn";
 
 function SearchComponent({ product }) {
   const [{ basket }, dispatch] = useStateValue();
+  const navigate = useNavigate();
+  const { isSignedIn } = useAuth();
   function roundToNearestUpperThousand(num) {
     return Math.ceil(num / 10000) * 10000;
   }
   const addProductToCart = () => {
-    dispatch({
-      type: "ADD_TO_BASKET",
-      item: {
-        id: product.id,
-        title: product.title,
-        image: product.image,
-        price: product.price,
-        rating: product.rating,
-      },
-    });
+    if (isSignedIn()) {
+      dispatch({
+        type: "ADD_TO_BASKET",
+        item: {
+          id: product.id,
+          title: product.title,
+          image: product.image,
+          price: product.price,
+          rating: product.rating,
+        },
+      });
+    }
+  };
+  const handleDirectBuy = () => {
+    if (isSignedIn()) {
+      dispatch({
+        type: "ADD_TO_BASKET",
+        item: {
+          id: product.id,
+          title: product.title,
+          image: product.image,
+          price: product.price,
+          rating: product.rating,
+        },
+      });
+      navigate("/payment");
+    }
   };
   return (
     <div className="searchComponent">
@@ -46,9 +67,17 @@ function SearchComponent({ product }) {
           </p>
         </div>
         <div className="prime">prime</div>
-        <button className="shoppingButton" onClick={addProductToCart}>
-          Add to cart
-        </button>
+        <div className="search__buttons">
+          <button className="shoppingButton" onClick={addProductToCart}>
+            Add to cart
+          </button>
+          <button
+            className="shoppingButton shoppingButton__buyNow"
+            onClick={handleDirectBuy}
+          >
+            Buy Now
+          </button>
+        </div>
       </div>
     </div>
   );

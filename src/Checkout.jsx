@@ -15,19 +15,28 @@ function Checkout() {
       type: "CLEAR_CART",
     });
   };
+  if (!user) {
+    return (
+      <div className="checkout">
+        <div className="checkout__left">
+          <div>
+            <div className="checkoutTitle">
+              <div className="checkout__title">
+                <h1>Please Sign In to view and add items to your cart.</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="checkout">
       <div className="checkout__left">
         <div>
           <div className="checkoutTitle">
             <div className="checkout__title">
-              {user ? (
-                <>
-                  <h3>Hello, {user?.email.split("@")[0]}</h3> <br />
-                </>
-              ) : (
-                ""
-              )}
+              <h3>Hello, {user?.email.split("@")[0]}</h3> <br />
               {basket?.length > 0 ? (
                 <>
                   <h1>Shopping Cart</h1>
