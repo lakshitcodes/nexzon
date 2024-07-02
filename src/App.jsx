@@ -19,6 +19,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import SearchResults from "./SearchResults.jsx";
 import Footer from "./Footer.jsx";
 import AboutProject from "./AboutProject.jsx";
+import ErrorComponent from "./ErrorComponent.jsx";
 
 const promise = loadStripe(
   "pk_test_51PWcYDCUHs9kPndgSF9kbLeCLRSziMH0JoX37n3j46zLb6RKS45QW6iGlEDAzmk1q7BiTp4Ns1P26ppQVLSveFUi00XPhPg4sX"
@@ -124,7 +125,9 @@ function App() {
             path="*"
             element={
               <>
-                <h1>Not Found</h1>
+                <Header />
+                <ErrorComponent />
+                <Footer />
               </>
             }
           ></Route>

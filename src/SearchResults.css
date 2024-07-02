@@ -1,3 +1,6 @@
+.searchresults__outerbox {
+  min-height: 80vh;
+}
 .searchBoxRender {
   display: flex;
   width: 100vw;

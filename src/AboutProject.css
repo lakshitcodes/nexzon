@@ -32,11 +32,11 @@ body {
   font-weight: 500;
   margin-bottom: 10px;
 }
-h5 {
+.content > h5 {
   font-size: 1.6rem;
   font-weight: 400;
 }
-p {
+.content > p {
   margin: 1rem 0;
   font-weight: 400;
 }
@@ -50,6 +50,7 @@ p {
 }
 .outerlist > li > h5 {
   font-size: 1.3rem;
+  font-weight: 400;
 }
 .outerlist > li {
   margin-bottom: 0.5rem;
