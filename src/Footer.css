@@ -3,6 +3,9 @@
   color: white;
   font-size: 14px;
   margin-top: 5px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 
 .footer__top {
@@ -22,14 +25,12 @@
 }
 
 .footer__links {
-  width: 100%;
   display: flex;
   background-color: #232f3e;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  padding: 20px 40px;
+  padding: 20px 80px;
 }
-
 .footer__column {
   flex: 1;
   margin: 10px;

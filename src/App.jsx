@@ -1,12 +1,17 @@
 import "./App.css";
 import Header from "./Header.jsx";
 import Home from "./Home.jsx";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Checkout from "./Checkout.jsx";
 import Login from "./Login.jsx";
 import Payment from "./Payment.jsx";
 import Orders from "./Orders.jsx";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { auth } from "./firebase.js";
 import { useStateValue } from "./StateProvider.jsx";
 import { loadStripe } from "@stripe/stripe-js";
@@ -20,6 +25,12 @@ const promise = loadStripe(
 
 function App() {
   const [{}, dispatch] = useStateValue();
+  const [isCheckoutComplete, setIsCheckoutComplete] = useState(false);
+
+  // Function to mark checkout as complete
+  const onCheckoutComplete = () => {
+    setIsCheckoutComplete(true);
+  };
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       console.log("The user is  <<<", authUser);
@@ -47,7 +58,7 @@ function App() {
             element={
               <>
                 <Header />
-                <Checkout />
+                <Checkout onCheckoutComplete={onCheckoutComplete} />
                 <Footer />
               </>
             }
@@ -85,13 +96,17 @@ function App() {
           <Route
             path="/payment"
             element={
-              <>
-                <Header />
-                <Elements stripe={promise}>
-                  <Payment />
-                </Elements>
-                <Footer />
-              </>
+              isCheckoutComplete ? (
+                <>
+                  <Header />
+                  <Elements stripe={promise}>
+                    <Payment />
+                  </Elements>
+                  <Footer />
+                </>
+              ) : (
+                <Navigate to="/checkout" replace />
+              )
             }
           ></Route>
           <Route

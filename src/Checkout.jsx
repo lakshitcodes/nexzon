@@ -5,7 +5,7 @@ import CheckoutProduct from "./CheckoutProduct.jsx";
 import { useStateValue } from "./StateProvider.jsx";
 import CurrencyFormat from "react-currency-format";
 
-function Checkout() {
+function Checkout({ onCheckoutComplete }) {
   const [{ basket, user }, dispatch] = useStateValue();
   const sumPrice = (basket) => {
     return basket.reduce((a, b) => a + b.price, 0);
@@ -89,7 +89,7 @@ function Checkout() {
       </div>
       {basket?.length > 0 && (
         <div className="checkout__right">
-          <Subtotal />
+          <Subtotal onCheckoutComplete={onCheckoutComplete} />
         </div>
       )}
     </div>
