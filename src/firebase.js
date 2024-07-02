@@ -2,16 +2,20 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
+import dotenv from "dotenv";
+
+// Load environment variables from .env file
+dotenv.config();
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBBIPfhBnAZ8W3k7rzMSnDrJ7T1mrqcXQs",
-  authDomain: "lakshit-nexzon.firebaseapp.com",
-  projectId: "lakshit-nexzon",
-  storageBucket: "lakshit-nexzon.appspot.com",
-  messagingSenderId: "597917108064",
-  appId: "1:597917108064:web:8d64cf6e4a06e6d0a4c005",
-  measurementId: "G-7QSKPBFVCS",
+  apiKey: process.env.apiKey,
+  authDomain: process.env.authDomain,
+  projectId: process.env.projectId,
+  storageBucket: process.env.storageBucket,
+  messagingSenderId: process.env.messagingSenderId,
+  appId: process.env.appId,
+  measurementId: process.env.measurementId,
 };
 
 // Initialize Firebase
